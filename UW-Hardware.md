@@ -23,3 +23,9 @@
 ### 2.1 IMU
 
 (1) Power supply
+
+
+
+(2) Data Connection
+
+RS232 - 2/3/5
