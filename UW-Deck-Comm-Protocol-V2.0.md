@@ -88,7 +88,7 @@ enum uw_ccom_device_e
 
 ### 2.3 CRC帧校验
 
-CRC8, CRC16的实现可参考：
+CRC8以及CRC16的实现可参考：
 
 https://github.com/lammertb/libcrc
 

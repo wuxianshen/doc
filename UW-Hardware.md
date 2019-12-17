@@ -16,3 +16,10 @@
 | Depthometer |      |                                        |                                |
 | Humidometer |      |                                        |                                |
 
+
+
+## 2. Installation
+
+### 2.1 IMU
+
+(1) Power supply
