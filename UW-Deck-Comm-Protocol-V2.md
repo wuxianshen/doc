@@ -651,3 +651,101 @@ typedef struct _auv_angular_vel_s
 
 **备注：需参考北航潜器协议“遥测帧”格式，根据需求进行设计。**
 
+遥测帧：
+
+```
+#pragma pack(1)
+
+//**********************/
+//**    Relay State   **/
+//**********************/
+typedef struct _uw_telemetry_relay_state_s
+{
+    uint16_t relay00 : 1;
+    uint16_t relay01 : 1;
+    uint16_t relay02 : 1;
+    uint16_t relay03 : 1;
+    uint16_t relay04 : 1;
+    uint16_t relay05 : 1;
+    uint16_t relay06 : 1;
+    uint16_t relay07 : 1;
+    uint16_t relay08 : 1;
+    uint16_t relay09 : 1;
+    uint16_t relay10 : 1;
+    uint16_t relay11 : 1;
+    uint16_t relay12 : 1;
+    uint16_t relay13 : 1;
+    uint16_t relay14 : 1;
+}uw_telemetry_relay_state_s;
+
+//**********************/
+//**  Battery State   **/
+//**********************/
+typedef struct _uw_telemetry_battery_state_s
+{
+    int16_t voltage; // Unit: 0.1V
+    int16_t current; // Unit: 0.1A
+    int16_t state_of_charge; // Unit: 1%
+}uw_telemetry_battery_state_s;
+
+//******************/
+//**  INS State   **/
+//******************/
+typedef struct _uw_telemetry_ins_state_s
+{
+    //0-null; 1-in init; 2-finish init; 3-in calibrationA; 4-finish calibrationA;
+    //5-in calibrationB; 6-finish calibrationB; 7-navigation working;
+    uint8_t ins_state;
+    uint8_t ins_error_info;     //100-no error;
+    uint8_t imu_state;          //10-imu start; 11-imu normal; 12-imu error
+    uint8_t imu_error_info;     //100-no error; 101-data loss; 102-output overflow; 103-no output;
+    uint8_t navigation_state;   //100-normal
+    uint8_t dvl_state;          //0-invalid; 1-valid;
+    uint8_t gps_state;          //0-invalid; 1-valid;
+}uw_telemetry_ins_state_s;
+
+//******************/
+//**  GPS State   **/
+//******************/
+typedef struct _uw_telemetry_gps_s
+{
+	int32_t longitude;  // Unit: 1E-6 Degree, +:East,  -:West;
+	int32_t latitude;   // Unit: 1E-6 Degree, +:North, -:South;
+	int32_t height;     // Unit: 0.1m
+}uw_telemetry_gps_s;
+
+//******************/
+//**  Pose State  **/
+//******************/
+typedef struct _uw_telemetry_pose_s
+{
+	int16_t roll;    // Unit: 0.1 Degree
+	int16_t pitch;   // Unit: 0.1 Degree
+	int16_t yaw;     // Unit: 0.1 Degree
+}uw_telemetry_pose_s;
+
+//******************/
+//**  Pose State  **/
+//******************/
+typedef struct _uw_telemetry_vel_s
+{
+	int16_t east_vel;    // Unit: 0.1 m/s
+	int16_t north_vel;   // Unit: 0.1 m/s
+	int16_t up_vel;      // Unit: 0.1 m/s
+}uw_telemetry_vel_s;
+
+typedef struct _uw_telemetry_frame_s
+{
+    uw_telemetry_relay_state_s   relay_state;
+    uw_telemetry_battery_state_s battery_state;
+    uw_telemetry_ins_state_s ins_state;
+    uw_telemetry_gps_s  gps_state;
+    uw_telemetry_pose_s pose_state;
+    uw_telemetry_vel_s  vel_state;
+
+}uw_telemetry_frame_s;
+
+#pragma pack()
+```
+
+#### 
