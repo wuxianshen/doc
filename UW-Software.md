@@ -113,3 +113,30 @@ export PATH=/home/tao/tools/arm-linux-gcc-7.4/bin:$PATH
 ② Compile Canfestival for ARM
 sudo ./configure --cc=arm-linux-gnueabihf-gcc --arch=arm  --os=unix --prefix=$HOME/work/imx6/can-festival --target=unix --can=socket --timers=unix
 
+## LINUX串口编程
+
+### 串口初始化
+
+波特率
+
+起始位 + 数据位 + 奇偶校验位 + 停止位
+
+特殊设置
+
+https://www.cnblogs.com/li-hao/archive/2012/02/19/2358158.html
+
+### 串口调用流程
+
+打开串口
+
+串口设置
+
+https://blog.csdn.net/morixinguan/article/details/80898172
+
+串口读写
+
+关闭串口
+
+### cmake
+
+https://blog.csdn.net/whahu1989/article/details/82078563
