@@ -8,6 +8,24 @@
 
 [toc]
 
+## Gitee项目
+
+TJU_UW项目：https://gitee.com/TJU_UW/dashboard
+
+uw-doc: https://gitee.com/TJU_UW/doc
+
+Windows/Linux下安装Git；
+
+生成ssh key：在git命令行(Windows)、终端(Linux)中，执行ssh-keygen，连续回车以默认配置生成ssh key；
+
+进入~/.ssh文件夹，cat id_rsa.pub，获取公钥内容；
+
+在Gitee中添加公钥。（右上角个人头像，settings，左侧栏选ssh keys，添加ssh key。）
+
+使用git clone命令同步工程。
+
+
+
 ## 潜器主控程序
 
 uw_all_in_one程序
