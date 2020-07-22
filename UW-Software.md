@@ -6,7 +6,7 @@
 
 [toc]
 
-## Gitee
+## 1 Gitee
 
 TJU_UW项目：https://gitee.com/TJU_UW/dashboard
 
@@ -22,9 +22,21 @@ Windows/Linux下安装Git；
 
 使用git clone命令同步工程。
 
+注意，从Gitee上同步仓库后，远程源只连接到Gitee上，我们需要同步连接到github上，执行如下操作：
+
+对于doc仓库：
+
+git remote set-url --add origin git@github.com:wuxianshen/doc.git
+
+对于uw_all_in_one：
+
+git remote set-url --add origin git@github.com:wuxianshen/uw_all_in_one.git
 
 
-## Git
+
+
+
+## 2 Git
 
 版本控制 Version Control
 
@@ -54,7 +66,7 @@ git push : 将本地提交推送到远程仓库 (同步本地仓库)
 
 
 
-## 交叉编译准备
+## 3 交叉编译准备
 
 在X86主机上编译ARM平台程序——使用arm gcc
 
@@ -68,7 +80,7 @@ https://developer.arm.com/tools-and-software/open-source-software/developer-tool
 
 
 
-## 潜器主控程序
+## 4 潜器主控程序
 
 uw_all_in_one程序
 
@@ -80,7 +92,7 @@ uw_all_in_one程序
 
 
 
-## Can-Festival
+## 5 Can-Festival
 
 ### 1 构建与编译
 
@@ -113,7 +125,13 @@ export PATH=/home/tao/tools/arm-linux-gcc-7.4/bin:$PATH
 ② Compile Canfestival for ARM
 sudo ./configure --cc=arm-linux-gnueabihf-gcc --arch=arm  --os=unix --prefix=$HOME/work/imx6/can-festival --target=unix --can=socket --timers=unix
 
-## LINUX串口编程
+
+
+## 6 LINUX串口编程
+
+### 开启串口权限
+
+sudo usermod -a -G dialout $USER，注销后重新登录；
 
 ### 串口初始化（串口设置）
 
@@ -127,7 +145,7 @@ https://www.cnblogs.com/li-hao/archive/2012/02/19/2358158.html
 
 ### 串口调用流程
 
-打开串口-----ttyS1(COM1)
+打开串口-----ttyS1(COM1)---open函数
 
 串口设置
 
@@ -135,7 +153,7 @@ https://blog.csdn.net/morixinguan/article/details/80898172
 
 串口读写-----read和write函数
 
-关闭串口
+关闭串口---close函数
 
 ### cmake
 
