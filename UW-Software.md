@@ -20,9 +20,37 @@ Windows/Linux下安装Git；
 
 进入~/.ssh文件夹，cat id_rsa.pub，获取公钥内容；
 
-在Gitee中添加公钥。（右上角个人头像，settings，左侧栏选ssh keys，添加ssh key。）
+在Gitee中添加公钥。（右上角个人头像，settings，左侧栏选ssh keys，添加ssh key）
 
 使用git clone命令同步工程。
+
+
+
+## Git
+
+版本控制 Version Control
+
+二进制 差异管理
+
+Git 操作：
+
+git status: 查看当前仓库状态
+
+git restore : 恢复文件修改；（ git reset HEAD <file> ）
+
+git add: 添加修改/新文件到缓存区(staged)  <----> git rm
+
+git commit -m "****" : 提交缓存区修改到git仓库
+
+git reset --hard *** ： 回滚到某个版本
+
+Github：
+
+git clone : 同步远程仓库代码
+
+git pull : 从远程仓库获取最新提交（同步远程仓库）
+
+git push : 将本地提交推送到远程仓库 (同步本地仓库)
 
 
 
