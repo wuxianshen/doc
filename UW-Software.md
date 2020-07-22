@@ -115,25 +115,25 @@ sudo ./configure --cc=arm-linux-gnueabihf-gcc --arch=arm  --os=unix --prefix=$HO
 
 ## LINUX串口编程
 
-### 串口初始化
+### 串口初始化（串口设置）
 
-波特率
+1. 波特率
 
-起始位 + 数据位 + 奇偶校验位 + 停止位
+2. 起始位 + 数据位 + 奇偶校验位 + 停止位
 
-特殊设置
+3. 特殊设置
 
 https://www.cnblogs.com/li-hao/archive/2012/02/19/2358158.html
 
 ### 串口调用流程
 
-打开串口
+打开串口-----ttyS1(COM1)
 
 串口设置
 
 https://blog.csdn.net/morixinguan/article/details/80898172
 
-串口读写
+串口读写-----read和write函数
 
 关闭串口
 
