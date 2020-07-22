@@ -1,14 +1,12 @@
 # UW-Software
 
-”UW-Logic“文档描述潜器主要工作模式的工作逻辑，包括任务流、命令流和信息流的实现与交互。
-
-潜器的主要工作模式包括甲板自检模式、水面模式、水下运动模式、下潜模式。
+”UW-Software“文档描述潜器软件开发相关内容。
 
 
 
 [toc]
 
-## Gitee项目
+## Gitee
 
 TJU_UW项目：https://gitee.com/TJU_UW/dashboard
 
@@ -44,13 +42,29 @@ git commit -m "****" : 提交缓存区修改到git仓库
 
 git reset --hard *** ： 回滚到某个版本
 
-Github：
+Github / Gitee：
 
 git clone : 同步远程仓库代码
 
 git pull : 从远程仓库获取最新提交（同步远程仓库）
 
 git push : 将本地提交推送到远程仓库 (同步本地仓库)
+
+"pull request"
+
+
+
+## 交叉编译准备
+
+在X86主机上编译ARM平台程序——使用arm gcc
+
+arm平台gcc下载地址：
+
+https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads
+
+直接解压预编译好的gcc程序到某个路径，解压后文件夹下的bin子文件夹中即包含编译程序需要使用的程序：arm-linux-gnueabihf-gcc
+
+后续交叉编译时，需要通过配置环境变量PATH或者修改cmake配置，指定使用arm gcc。
 
 
 
