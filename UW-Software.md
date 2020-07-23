@@ -208,3 +208,27 @@ https://blog.csdn.net/morixinguan/article/details/80898172
 ### cmake
 
 https://blog.csdn.net/whahu1989/article/details/82078563
+
+
+
+## 7 GPS编程
+
+### 进程与线程
+
+https://blog.csdn.net/beidaol/article/details/89135277
+
+https://blog.csdn.net/tjcwt2011/article/details/89561927
+
+https://blog.csdn.net/wojiuguowei/article/details/82993697
+
+线程创建
+
+互斥锁
+
+条件变量
+
+信号量
+
+### GPS串口数据---状态机
+
+### 程序流程
