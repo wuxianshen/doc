@@ -32,6 +32,8 @@ git remote set-url --add origin git@github.com:wuxianshen/doc.git
 
 git remote set-url --add origin git@github.com:wuxianshen/uw_all_in_one.git
 
+移除某个新添加的url：git remote set-url --delete origin
+
 
 
 
@@ -84,11 +86,57 @@ https://developer.arm.com/tools-and-software/open-source-software/developer-tool
 
 uw_all_in_one程序
 
-### 1 构建与编译
+### 1 同步代码
 
+git clone git@gitee.com:TJU_UW/uw_all_in_one.git --recursive
 
+如果忘记添加--recursive选项，可以在仓库目录下运行：
 
-### 2 运行
+git submodule update --init --recursive
+
+同步代码后应注意添加github的push源
+
+### 2 构建与编译
+
+① Arm gcc编译器：arm-linux-gcc-7.4.tar.gz解压，例如解压到/home/tao/tool/gcc-arm-7；
+
+尝试运行解压后的arm gcc，如果提示找不到文件，需要安装32位运行库：
+
+sudo apt-get install lib32ncurses5 lib32z1
+
+② 使用本地gcc和arm gcc编译can-festival，详见5，假设Arm版本安装到/home/tao/tool/can-festival，x86版本默认安装到/usr/local下；
+
+③ 修改代码目录下cmake-modules文件夹中的compiler_config.cmake文件，配置if (CTYPE MATCHES Arm)条件下的gcc路径：
+
+set(TOOLS /home/tao/tool/gcc-arm-7) 
+
+④ 修改代码目录下cmake-modules文件夹中的can_motor.cmake文件，配置if (CTYPE MATCHES Arm)条件下的can festival路径：
+
+set(CAN_FESTIVAL_DIR /home/tao/tool/can-festival)
+
+⑤ 编译x86版本程序：
+
+进入代码目录下：
+
+mkdir build_x86 & cd build_x86
+
+cmake -DARCH=x86 ..
+
+make
+
+⑥ 编译arm版本程序：
+
+回到代码目录下，
+
+mkdir build_arm & cd build_arm
+
+cmake -DARCH=Arm ..
+
+make
+
+⑦ make后，build目录的bin文件夹下包含编译生成的可执行程序uw_all_in_one.
+
+### 3 运行
 
 
 
@@ -132,6 +180,8 @@ sudo ./configure --cc=arm-linux-gnueabihf-gcc --arch=arm  --os=unix --prefix=$HO
 ### 开启串口权限
 
 sudo usermod -a -G dialout $USER，注销后重新登录；
+
+Linux下串口助手：sudo apt-get install cutecom
 
 ### 串口初始化（串口设置）
 
