@@ -138,6 +138,24 @@ make
 
 ### 3 运行
 
+#### 通过局域网与主控连接
+
+路由器IP：192.168.2.1
+
+主控IP：192.168.2.123
+
+通过SSH连接主控终端，主控用户名root:
+
+**ssh root@192.168.2.123**
+
+通过SCP实现文件传输：
+
+**scp  bin/uw_all_in_one  root@192.168.2.123:/home/root/log/**
+
+查看是否有uw_all_in_one正在运行：
+
+ps -ef | grep uw_all_in_one
+
 
 
 ## 5 Can-Festival
